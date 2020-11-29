@@ -1,0 +1,67 @@
+.modal__bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal__send {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem 3rem;
+  max-width: 40rem;
+
+  border-radius: 0.4rem;
+  background-color: white;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.05);
+
+  p {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .modal__send-buttons {
+    button {
+      flex-basis: 40%;
+    }
+
+    &.validate {
+      font-size: 1.3rem;
+      color: $dark-green;
+      background: linear-gradient(to right, $dark-green 50%, transparent 50%);
+      background-size: 200% 100%;
+      background-position: right bottom;
+
+      transition: background-position 450ms linear, color 650ms linear;
+
+      svg {
+        color: $red;
+
+        transition: color 1200ms ease-out;
+      }
+
+      &:hover {
+        color: white;
+        background-position: left bottom;
+
+        transition: background-position 250ms linear, color 350ms linear;
+
+        svg {
+          color: white;
+
+          transition: color 200ms linear;
+        }
+      }
+    }
+
+    &.cancel {
+      font-weight: 400;
+      color: $red;
+    }
+  }
+}

@@ -9,29 +9,14 @@ class Body extends React.Component {
 
     this.state = {
       people: [
-        { name: 'Vivi Dé La Bona', email: 'test@test.fr' },
-        { name: 'Julia Cotto', email: 'test@test.fr' },
-        { name: 'Hélène Gailloude', email: 'test@test.fr' },
-        { name: 'Hélène Gailloude', email: 'test@test.fr' },
-        { name: 'Hélène Gailloude', email: 'test@test.fr' },
-        { name: 'Hélène Gailloude', email: 'test@test.fr' },
-        { name: 'Hélène Gailloude', email: 'test@test.fr' },
-        { name: 'Hélène Gailloude', email: 'test@test.fr' },
-        { name: 'Hélène Gailloude', email: 'test@test.fr' },
-        { name: 'Hélène Gailloude', email: 'test@test.fr' },
-        { name: 'Hélène Gailloude', email: 'test@test.fr' },
-        { name: 'Hélène Gailloude', email: 'test@test.fr' },
-        { name: 'Hélène Gailloude', email: 'test@test.fr' },
-        { name: 'Hélène Gailloude', email: 'test@test.fr' },
-        { name: 'Hélène Gailloude', email: 'test@test.fr' },
-        { name: 'Hélène Gailloude', email: 'test@test.fr' },
-        { name: 'Hélène Gailloude', email: 'test@test.fr' },
-        { name: 'Hélène Gailloude', email: 'test@test.fr' },
-        { name: 'Hélène Gailloude', email: 'test@test.fr' },
-        { name: 'Hélène Gailloude', email: 'test@test.fr' },
-        { name: 'Hélène Gailloude', email: 'test@test.fr' },
-        { name: 'Hélène Gailloude', email: 'test@test.fr' },
+        { name: 'Vivi Dé La Bona', email: 'test1@test.fr' },
+        { name: 'Julia Cotto', email: 'test2@test.fr' },
+        { name: 'Hélène Gailloude', email: 'test3@test.fr' },
+        { name: 'Truc', email: 'test4@test.fr' },
+        { name: 'Machin', email: 'test5@test.fr' },
+        { name: 'Chose', email: 'test6@test.fr' },
       ], // List of signed up people
+      shuffledPeople: [],
       error: '',
     };
   }
@@ -68,13 +53,32 @@ class Body extends React.Component {
     });
   };
 
-  removePerson = (index) => {
-    let people = [...this.state.people];
-    
-    if (-1 !== index) {
-      people.splice(index, 1);
-      this.setState({people: people});
+  removePerson = email => {
+    this.setState({ people: this.state.people.filter(person => email !== person.email) });
+  };
+
+  shuffle = array => {
+    for (let i = array.length - 1; 0 < i; i--) {
+      const j = Math.floor(Math.random() * i), temp = array[i];
+
+      array[i] = array[j];
+      array[j] = temp;
     }
+  };
+
+  shufflePeople = people => {
+    let pool = [...people];
+    this.shuffle(pool);
+
+    people.map((person, index) => {
+      if (pool[index]['email'] === person['email']) {
+        this.shufflePeople(people);
+      }
+    });
+
+    this.setState({ shuffledPeople: pool });
+
+    this.props.displayModal();
   };
 
   render() {
@@ -92,7 +96,8 @@ class Body extends React.Component {
           </div>
           <List
             people={this.state.people}
-            removePerson={this.removePerson} />
+            removePerson={this.removePerson}
+            pairPeople={this.shufflePeople} />
         </div>
       </div>
     );

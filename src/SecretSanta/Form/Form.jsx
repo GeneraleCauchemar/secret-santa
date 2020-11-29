@@ -1,5 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Button from '../Layout/Body/Button';
 
 class Form extends React.Component {
   validateData = e => {
@@ -21,10 +22,10 @@ class Form extends React.Component {
         <form autoComplete="off" onSubmit={this.validateData} id="elf-form" className="d-flex flex-column align-items-center">
           <input type="text" name="name" className="input" placeholder="Name" />
           <input type="text" name="email" className="input" placeholder="Email" />
-          <button type="submit">
-            <FontAwesomeIcon icon="candy-cane" className="mr-2" size="lg" />
-            Add to your list
-          </button>
+          <Button
+            prependIcon={<FontAwesomeIcon icon="candy-cane" className="mr-2" size="lg" />}
+            text="Add to your list"
+          />
         </form>
       </>
     );

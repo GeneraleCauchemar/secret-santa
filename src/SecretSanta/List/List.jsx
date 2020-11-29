@@ -1,7 +1,14 @@
 import React from 'react';
 import Person from './Person';
+import Button from '../Layout/Body/Button';
 
 class List extends React.Component {
+  pairPeople = e => {
+    e.preventDefault();
+
+    this.props.pairPeople(this.props.people);
+  };
+
   render() {
     return (
       <div className="people__container d-flex flex-column">
@@ -24,9 +31,13 @@ class List extends React.Component {
         </div>
         {
           3 <= this.props.people.length ?
-            <button className="button__pair"> Pair them up!</button> :
+            <Button
+              className="button__pair"
+              onClick={this.pairPeople}
+              text="Pair them up!" /> :
             ''
         }
+
       </div>
     );
   }

@@ -8,11 +8,11 @@ form {
     }
   }
 
-  button[type="submit"] {
+  button {
     font-weight: 500;
     border-radius: 0 0 0.4rem 0.4rem;
     width: 100%;
-    padding: 20px;
+    //padding: 20px;
     font-size: 1.1rem;
     color: $dark-green;
     background-color: white;

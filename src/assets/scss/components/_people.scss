@@ -1,0 +1,42 @@
+.people__container {
+  position: relative;
+
+  height: 100%;
+  max-height: calc(100vh - 100px);
+  overflow: hidden;
+  flex-basis: 70%;
+
+  border-radius: 0.4rem;
+  background-color: white;
+
+  .people__container-list {
+    width: 100%;
+    overflow: hidden;
+    padding: 2rem 3rem;
+
+    box-shadow: 0 2px 3px 0 hsla(0, 0%, 0%, 0.02);
+    background-color: $white;
+
+    ul {
+      overflow: scroll;
+      max-height: 100%;
+    }
+  }
+
+  &.people__container-w-button {
+    border-radius: 0.4rem 0.4rem 0 0;
+  }
+}
+
+.button__pair {
+  font-weight: 700;
+  border-radius: 0 0 0.4rem 0.4rem;
+  width: 100%;
+  padding: 0.75rem 5rem;
+  font-size: 1.4rem;
+
+  background-color: $red;
+  background-image: linear-gradient(45deg, white 20%, $dark-green 20.5%, $dark-green 25%, white 25.5%, white 28%, transparent 28.5%, transparent 50%, white 50.5%, white 70%, $dark-green 70.5%, $dark-green 75%, white 75.5%, white 78%, transparent 78.5%, transparent);
+  background-size: 65px 65px;
+  color: black;
+}

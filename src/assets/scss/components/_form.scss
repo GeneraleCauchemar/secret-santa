@@ -1,0 +1,40 @@
+form {
+  input {
+    border-bottom: 2px solid $red;
+
+    &:first-of-type {
+      border-radius: 0.4rem 0.4rem 0 0;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+  }
+
+  button[type="submit"] {
+    font-weight: 500;
+    border-radius: 0 0 0.4rem 0.4rem;
+    width: 100%;
+    padding: 20px;
+    font-size: 1.1rem;
+    color: $dark-green;
+    background-color: white;
+
+    svg {
+      color: $red;
+    }
+  }
+}
+
+.input {
+  width: 100%;
+  //flex-grow: 1;
+}
+
+.add-icon {
+  height: 0.7rem;
+  margin-right: 0.2rem;
+}
+
+.form__error {
+  color: #d53743;
+  font-size: 1rem;
+  text-align: center;
+}

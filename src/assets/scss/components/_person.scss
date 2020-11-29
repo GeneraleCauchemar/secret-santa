@@ -1,0 +1,45 @@
+.person__container {
+  flex-basis: 98%;
+
+  .person__index {
+    flex-basis: 5%;
+
+    font-weight: 500;
+    color: $red;
+  }
+
+  .person__name {
+    margin-right: 0.6rem;
+  }
+
+  .person__email {
+    font-weight: 200;
+  }
+
+  .person__remove {
+    span {
+      display: none;
+      text-transform: lowercase;
+    }
+
+    background-color: transparent;
+    color: $grey;
+
+    &:hover {
+      span {
+        display: inline-block;
+        margin-right: .4rem;
+      }
+
+      color: $red;
+    }
+  }
+}
+
+.people__container li {
+  &:nth-child(odd) {
+    .person__index {
+      color: $dark-green;
+    }
+  }
+}

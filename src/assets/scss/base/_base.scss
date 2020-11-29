@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700&display=swap');
+
+@font-face {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 62.5%;
+  background-color: $offwhite;
+  color: $dark-grey;
+  margin: 0;
+  padding: 50px;
+}
+
+.wrap {
+  flex: 1;
+}
+
+h1, h2, h3, h4, h5, h6, p, a {
+  opacity: 0.9;
+  margin: 0.5rem 0rem;
+}
+
+a {
+  color: $blue;
+}
+
+h1, h2, h3, h5, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+.subtitle {
+  opacity: 0.8;
+}
+
+h1 {
+  font-size: 2.0rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+}
+
+h4 {
+  font-size: 1.4rem;
+}
+
+h5 {
+  font-size: 1.2rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+button {
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  text-transform: uppercase;
+}
+
+button:focus {
+  outline: none;
+}
+
+input {
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+}
+
+input:focus {
+  outline: none;
+}
+
+.body-wrap {
+  width: 60rem;
+  margin: 0 auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+    font-size: 1rem;
+    line-height: 3rem;
+  }
+}

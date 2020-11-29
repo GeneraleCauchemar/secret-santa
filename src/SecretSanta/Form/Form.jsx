@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Button from '../Layout/Body/Button';
+import Button from '../Button';
 
 class Form extends React.Component {
   validateData = e => {

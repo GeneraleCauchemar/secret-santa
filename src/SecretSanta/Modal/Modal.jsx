@@ -9,7 +9,7 @@ class Modal extends React.Component {
 
   render() {
     return <>
-      <div className={`modal__bg ${this.props.displayModal ? '' : 'd-none'}`} />
+      <div className={`modal__bg ${this.props.displayModal ? '' : 'd-none'}`} onClick={this.closeModal} />
       <div className={`modal__send d-flex flex-column justify-content-center ${this.props.displayModal ? '' : 'd-none'}`}>
         <p>To each their own! Santas have been appointed. Send joyous emails?</p>
         <div className="modal__send-buttons d-flex justify-content-around mt-4">

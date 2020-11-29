@@ -1,6 +1,6 @@
 import React from 'react';
 import Person from './Person';
-import Button from '../Layout/Body/Button';
+import Button from '../Button';
 
 class List extends React.Component {
   pairPeople = e => {

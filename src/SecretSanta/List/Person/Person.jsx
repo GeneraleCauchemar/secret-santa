@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Button from '../../Layout/Body/Button';
+import Button from '../../Button';
 
 class Person extends React.Component {
   removePerson = e => {

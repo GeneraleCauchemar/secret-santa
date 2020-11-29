@@ -1,17 +1,24 @@
 import React from 'react';
 import Header from './Header';
 import Body from './Body';
-import Modal from './Body/Modal';
+import Modal from '../Modal';
+import Snow from '../Snow';
 
 class Layout extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = [{ displayModal: false }];
+    this.state = [{
+      displayModal: false,
+      displaySnow: false,
+    }];
   }
 
   displayModal = (value = true) => {
-    this.setState({ displayModal: value });
+    this.setState({
+      displayModal: value,
+      displaySnow: value
+    });
   };
 
   closeModal = () => {
@@ -24,6 +31,7 @@ class Layout extends React.Component {
         <Header />
         <Body displayModal={this.displayModal} />
         <Modal displayModal={this.state.displayModal} closeModal={this.closeModal} />
+        <Snow display={this.state.displaySnow} />
       </>
     );
   }

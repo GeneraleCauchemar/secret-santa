@@ -8,14 +8,7 @@ class Body extends React.Component {
     super(props);
 
     this.state = {
-      people: [
-        { name: 'Vivi Dé La Bona', email: 'test1@test.fr' },
-        { name: 'Julia Cotto', email: 'test2@test.fr' },
-        { name: 'Hélène Gailloude', email: 'test3@test.fr' },
-        { name: 'Truc', email: 'test4@test.fr' },
-        { name: 'Machin', email: 'test5@test.fr' },
-        { name: 'Chose', email: 'test6@test.fr' },
-      ], // List of signed up people
+      people: [], // List of signed up people
       shuffledPeople: [],
       error: '',
     };
